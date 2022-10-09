@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%--Always include above taglib line if you want to use JSTL in your code--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,5 +21,8 @@
             Last Name: <input type="text" name="lastname" value="${lastname}"><br>
             <input type="submit" value="Submit">
         </form>
+            <c:if test="${invalid == true}">
+                <p>Invalid entry, please enter both your first and last names</p>
+            </c:if>
     </body>
 </html>

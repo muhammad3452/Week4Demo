@@ -32,6 +32,8 @@ public class helloworldservlet extends HttpServlet {
             //note: always check for null first since you could end up with NullPointerException otherwise
             request.setAttribute("firstname", firstname);
             request.setAttribute("lastname", lastname);
+            request.setAttribute("invalid", true);
+            //setting invalid attribute to be true, since it will directly impact JSP page
             getServletContext().getRequestDispatcher("/WEB-INF/hellworldform.jsp").forward(request, response);
             return; //helps to exit method
         }
